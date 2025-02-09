@@ -33,11 +33,11 @@ git clone https://github.com/ayrajfss/CustomerProduct.git
 cd CustomerProduct
 
 2️⃣ Configure the Database (MS SQL)
-Update src/main/resources/application.properties with your MS SQL database details:
+Update src/main/resources/application.properties with MS SQL database details:
 
-spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=CustomerProduct
-spring.datasource.username=your_username
-spring.datasource.password=your_password
+spring.datasource.url=jdbc:sqlserver://localhost:1435;databaseName=CustomerProduct
+spring.datasource.username=sa
+spring.datasource.password=CigarretesAfterSex11Jan
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.database-platform=org.hibernate.dialect.SQLServerDialect
 
@@ -51,11 +51,11 @@ mvn spring-boot:run
 📌 API Endpoints
 🔹 Customers
 Method	Endpoint	Description
-GET	/api/customers	Get all customers
-GET	/api/customers/{id}	Get a customer by ID
-POST	/api/customers	Create a new customer
-PUT	/api/customers/{id}	Update a customer
-DELETE	/api/customers/{id}	Delete a customer
+GET	/api/customers	(Get all customers)
+GET	/api/customers/{id}	(Get a customer by ID)
+POST	/api/customers	(Create a new customer)
+PUT	/api/customers/{id}	(Update a customer)
+DELETE	/api/customers/{id}	(Delete a customer)
 
 Example JSON Request (POST /api/customers):
 
@@ -69,11 +69,11 @@ Example JSON Request (POST /api/customers):
 
 🔹 Products
 Method	Endpoint	Description
-GET	/api/products	Get all products
-GET	/api/products/{id}	Get a product by ID
-POST	/api/products	Create a new product
-PUT	/api/products/{id}	Update a product
-DELETE	/api/products/{id}	Delete a product
+GET	/api/products	(Get all products)
+GET	/api/products/{id}	(Get a product by ID)
+POST	/api/products	(Create a new product)
+PUT	/api/products/{id}	(Update a product)
+DELETE	/api/products/{id}	(Delete a product)
 
 Example JSON Request (POST /api/products):
 
