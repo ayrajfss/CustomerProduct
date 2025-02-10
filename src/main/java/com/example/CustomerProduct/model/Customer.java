@@ -2,7 +2,7 @@ package com.example.CustomerProduct.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -14,9 +14,9 @@ public class Customer {
     private String firstName;
     private String lastName;
 
-    @ElementCollection
-    private List<String> emails;
+    @ElementCollection(fetch = FetchType.EAGER) // Eagerly load the collection
+    private Set<String> emails;
 
-    @ElementCollection
-    private List<String> familyMembers;
+    @ElementCollection(fetch = FetchType.EAGER) // Eagerly load the collection
+    private Set<String> familyMembers;
 }

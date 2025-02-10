@@ -4,8 +4,7 @@ import com.example.CustomerProduct.model.Customer;
 import com.example.CustomerProduct.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,12 +14,12 @@ public class CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
 
-
+    @Transactional(readOnly = true)
     public List<Customer> getAllCustomers() {
-        return customerRepository.findAll();
+        return customerRepository.findAll(); // No more LazyInitializationException
     }
 
-
+    @Transactional(readOnly = true)
     public Optional<Customer> getCustomerById(Long id) {
         return customerRepository.findById(id);
     }
