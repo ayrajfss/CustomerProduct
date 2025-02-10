@@ -1,6 +1,5 @@
 package com.example.CustomerProduct.service;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.cache.annotation.CacheEvict;
+
 
 import com.example.CustomerProduct.model.Product;
 import com.example.CustomerProduct.repository.ProductRepository;
@@ -19,7 +18,7 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    @Cacheable(value = "productsCache", key = "#id")
+
     public Optional<Product> getProductById(Long id) {
         return productRepository.findById(id);
     }
@@ -38,7 +37,7 @@ public class ProductService {
                 })
                 .orElseThrow(() -> new RuntimeException("Product not found"));
     }
-    @CacheEvict(value = "productsCache", key = "#id")
+
     public void deleteProduct(Long id) {
         productRepository.deleteById(id);
     }
